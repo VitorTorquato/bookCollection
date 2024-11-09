@@ -1,10 +1,10 @@
 import { FaHeart ,FaSearch} from "react-icons/fa";
-import { FiLogIn , FiLogOut} from "react-icons/fi";
+import { FiLogIn , FiUser} from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 export function Header(){
 
-    const signed = false;
+    const signed = true;
 
     return(
         <div className="w-full flex items-center justify-center h-16 bg-slate-200 drop-shadow mb-4 px-1">
@@ -30,11 +30,9 @@ export function Header(){
                 <nav className="flex items-center gap-5">
 
                 <Link
-                className="relative p-2 rounded-lg bg-red-500 text-white font-medium"
+                className="relative flex gap-1 items-center p-2 rounded-lg bg-red-500 text-white font-medium"
                 to='/favorites'>
-                    <span
-                    className="absolute  -top-2 -right-2 h-4 w-4 bg-red-900 text-xs text-white rounded-full flex items-center justify-center p-1"
-                    >1</span>
+                        Favorites
                      <FaHeart size={16} color="#FFF"/>
                 </Link>
 
@@ -50,7 +48,7 @@ export function Header(){
                 {
                     signed && (
                         <Link to='/login'>
-                        <FiLogOut size={24} color="#000"/>
+                        <FiUser size={24} color="#000"/>
                     </Link>  
                     )
                 }
