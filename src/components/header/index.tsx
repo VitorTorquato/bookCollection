@@ -1,10 +1,15 @@
-import { FaHeart ,FaSearch} from "react-icons/fa";
-import { FiLogIn , FiUser} from "react-icons/fi";
+import {FaSearch} from "react-icons/fa";
+import {FiUser} from "react-icons/fi";
 import { Link } from "react-router-dom";
+
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/authContext";
 
 export function Header(){
 
-    const signed = false;
+    const {signed,loadingAuth} = useContext(AuthContext);
+
+    
 
     return(
         <div className="w-full flex items-center justify-center h-16 bg-slate-200 drop-shadow mb-4 px-1">
@@ -13,7 +18,7 @@ export function Header(){
             className="w-full max-w-6xl flex items-center justify-between gap-16"
             >
                 <Link to='/'>
-                    <h1 className="text-white text-xl bg-red-500 p-2 rounded-lg">BookCollection</h1>
+                    <h1 className="text-white text-xl bg-red-500 p-2 rounded-lg">Book Collection</h1>
                 </Link>
 
                 <div
@@ -29,25 +34,20 @@ export function Header(){
 
                 <nav className="flex items-center gap-5">
 
-                <Link
-                className="relative flex gap-1 items-center p-2 rounded-lg bg-red-500 text-white font-medium"
-                to='/favorites'>
-                        Favorites
-                     <FaHeart size={16} color="#FFF"/>
-                </Link>
+              
 
                 {
-                    !signed && (
+                     !signed && (
 
                     <Link to='/login'>
-                        <FiLogIn size={24} color="#000"/>
+                        Login
                     </Link>    
                     )
                 }
 
                 {
-                    signed && (
-                        <Link to='/login'>
+                   !loadingAuth && signed && (
+                        <Link to='/dashboard'>
                         <FiUser size={24} color="#000"/>
                     </Link>  
                     )

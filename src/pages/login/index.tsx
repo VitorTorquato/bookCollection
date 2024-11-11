@@ -4,7 +4,15 @@ import { Input } from '../../components/input'
 import {useForm} from 'react-hook-form';
 import {z} from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
+
+import {auth} from '../../services/firebaseConnection';
+import {
+    signInWithEmailAndPassword,
+    signOut
+
+} from 'firebase/auth'
+import { useEffect } from 'react';
 
 
 const schema = z.object({
@@ -22,9 +30,28 @@ export function LogIn(){
             mode:'onChange'
         })
 
+        const navigate = useNavigate()
 
-        
+        function onSubmit(data:FormData){
+            signInWithEmailAndPassword(auth, data.email, data.password)
+            .then((user) => {
+                console.log(user)
+                navigate('/' , {replace:true})
+            }).catch(() => {
+                alert('somethint went wrong')
+            })
+ 
+         }
+         
+         useEffect(() => {
 
+            async function handleLogout(){
+                await signOut(auth);
+            }
+
+            handleLogout();
+
+         },[])
 
     return(
        <div
@@ -33,6 +60,7 @@ export function LogIn(){
       
 
         <form 
+        onSubmit={handleSubmit(onSubmit)}
         className='flex-1 w-full max-w-lg flex flex-col  items-center justify-center'
         >
             <h1
@@ -71,7 +99,9 @@ export function LogIn(){
 
             <p>Dont't have an account ? <Link to='/register' className='text-slate-500'>Register</Link></p>
 
-
+            <Link to='/'>
+                Go to home without login 
+            </Link>
         </form>
 
 

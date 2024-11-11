@@ -9,6 +9,7 @@ import { SignUp } from "../pages/singup";
 import { LogIn } from "../pages/login";
 import { NotFound } from "../pages/notfound";
 
+import { Private } from "./private";
 
 const router = createBrowserRouter([
 
@@ -25,15 +26,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "/favorites",
-                element: <Favorites/>
+                element: <Private><Favorites/></Private>
             },
             {
                 path: '/dashboard',
-                element: <Dashboard/>
+                element: <Private><Dashboard/></Private>
             },
             {
                 path:'/newbook',
-                element:<NewBook/>
+                element: <Private><NewBook/></Private>
             },
             {
                 path:'*',
