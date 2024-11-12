@@ -4,12 +4,15 @@ interface InputProps{
     type:string;
     placeholder:string;
     name:string;
+    min:number;
+    max:number;
     error?:string;
     register:UseFormRegister<any>;
     rules?:RegisterOptions;
+
 }
 
-export function Input({name,type,placeholder,register,rules,error}:InputProps){
+export function Input({name,type,placeholder,min,max,register,rules,error}:InputProps){
     return(
         <div>
             <input 
@@ -18,6 +21,8 @@ export function Input({name,type,placeholder,register,rules,error}:InputProps){
                 placeholder={placeholder}
                 {...register(name,rules)}
                 id={name}
+                min={min}
+                max={max}
 
             />
 

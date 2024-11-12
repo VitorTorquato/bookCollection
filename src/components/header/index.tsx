@@ -14,6 +14,7 @@ export function Header(){
     const [menuIsOpen , setMenuIsOpen] = useState(false); 
     
     const toggleMenu = () => setMenuIsOpen(prev => !prev);
+    const closeMenu = () => setMenuIsOpen(false);
 
     return(
         <div className=" w-full flex items-center justify-center h-16 bg-slate-200 drop-shadow mb-4 ">
@@ -61,6 +62,7 @@ export function Header(){
                 </header>
                     <UserMenu
                     menuIsOpen={menuIsOpen}
+                    closeMenu={closeMenu}
                     />
             </div>
 
