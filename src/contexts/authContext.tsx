@@ -38,6 +38,9 @@ function AuthProvider({children} : AuthProviderProps){
                     email: user?.email
                 })
                 setLoadingAuth(false);
+            }else{
+                setUser(null);
+                setLoadingAuth(false);
             }
         })
 
