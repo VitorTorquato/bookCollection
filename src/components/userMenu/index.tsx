@@ -28,10 +28,10 @@ export function UserMenu({menuIsOpen,closeMenu}: MenuProps){
 
 
     return(
-        <div className="absolute z-50 bg-red-500  right-0 to-full w-full max-w-md  flex flex-col items-center justify-center" 
+        <div className="absolute z-50 bg-red-500  right-0 to-full w-full  flex flex-col items-center justify-center" 
         
         >
-            <nav className={`absolute right-0 w-80 top-full mt-3 max-w-md overflow-hidden bg-red-500 transition-all duration-500 ease-in-out ${menuIsOpen ? 'h-72' : 'h-0'}`}
+            <nav className={`absolute z-50 right-0  top-full mt-3 w-full max-w-md overflow-hidden bg-red-500 transition-all duration-500 ease-in-out ${menuIsOpen ? 'h-72' : 'h-0'}`}
             
             >
                 <ul className="flex flex-col min-h-full max-h-72 justify-center gap-9 items-center text-white">

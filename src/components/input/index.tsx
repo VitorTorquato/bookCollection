@@ -4,8 +4,8 @@ interface InputProps{
     type:string;
     placeholder:string;
     name:string;
-    min:number;
-    max:number;
+    min?:number;
+    max?:number;
     error?:string;
     register:UseFormRegister<any>;
     rules?:RegisterOptions;
