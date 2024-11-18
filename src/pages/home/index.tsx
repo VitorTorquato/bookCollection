@@ -117,7 +117,7 @@ export function Home(){
                     </div>
 
                 <section className="w-full">
-                <h1 className="text-2xl text-black text-center mb-8">What people think about it:</h1>
+                <h1 className="text-2xl text-black text-center mb-8">What people think about these books:</h1>
                     
                     <div
                     className="w-full mt-0 mx-auto grid gap-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-5"
