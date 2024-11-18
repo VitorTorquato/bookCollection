@@ -192,7 +192,7 @@ export function NewBook(){
                                 style={{height:'284px'}}
                                 >
                                     <div
-                                    className="absolute p-1 w-48 h-full -z-10 flex flex-col items-center justify-center gap-1 text-sm cursor-pointer"
+                                    className="absolute p-1 w-48 h-48 -z-50 flex flex-col items-center justify-center gap-1 text-sm cursor-pointer"
                                     >
                                         <span>Drag 'JPEG or JPG', drop some file here , or clik to select file (10 MB limit per file)</span>
                                         

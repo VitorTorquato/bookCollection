@@ -97,12 +97,12 @@ export function Dashboard(){
                 {
                             books.map((book) => (
                                 <div
-                                className="relative w-full"
+                                className="relative -z-10 w-full"
                                 key={book.id}
                                 >
                                     <button
                                     onClick={() => handleDeleteBook(book)}
-                                    className="absolute text-sm font-medium bottom-1  right-6"
+                                    className="absolute  text-sm font-medium bottom-1  right-6"
                                     >
                                     remove
                                     </button>
