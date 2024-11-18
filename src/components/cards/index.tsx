@@ -17,7 +17,7 @@ export function Cards({cover,bookTitle,grade}:CardsProps){
                 src={cover} alt={`${bookTitle} cover`} />
             </div>
 
-            <strong className="h-10 font-bold text-sm">{bookTitle}</strong>
+            <strong className="h-10 font-bold text-sm text-center">{bookTitle}</strong>
             <Rating
             isBigSize
             grade={grade}
