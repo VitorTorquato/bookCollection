@@ -1,5 +1,5 @@
 import {v4 as uuidV4} from 'uuid';
-import {FiUpload,FiTrash2} from 'react-icons/fi'
+import {FiTrash2} from 'react-icons/fi'
 import { Container } from "../../../components/container";
 import { Input } from "../../../components/input";
 

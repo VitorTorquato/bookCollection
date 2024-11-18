@@ -2,12 +2,10 @@ import { Outlet } from "react-router-dom";
 import { Header } from "../components/header";
 
 
-export function Layout({children}:any){
+export function Layout(){
     return(
         <>
-        <Header
-        children={children}
-        />
+        <Header/>
         <Outlet/>
         </>
     )
