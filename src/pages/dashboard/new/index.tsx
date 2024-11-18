@@ -28,7 +28,7 @@ import {z} from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 const schema = z.object({
-    title: z.string().min(5,'title is required'),
+    title: z.string().min(1,'title is required'),
     author: z.string().min(1, 'author is required'),
     gender: z.enum([
         'Fiction',
@@ -188,18 +188,18 @@ export function NewBook(){
                             bookCover &&
                             bookCover.length === 0 ? (
                                 <button
-                                className="border-2 border-dashed w-72 rounded-lg flex items-center justify-center cursor-pointer py-2 md:w-48 md:mt-6"
+                                className="border-2 w-full border-dashed  rounded-lg flex items-center justify-center cursor-pointer py-2 md:w-48 md:mt-6"
                                 style={{height:'284px'}}
                                 >
                                     <div
-                                    className="absolute -z-10 flex gap-1 font-medium cursor-pointer"
+                                    className="absolute p-1 w-48 h-full -z-10 flex flex-col items-center justify-center gap-1 text-sm cursor-pointer"
                                     >
-                                        <span>Select an image</span>
-                                        <FiUpload size={24} color="#000"/>
+                                        <span>Drag 'JPEG or JPG', drop some file here , or clik to select file (10 MB limit per file)</span>
+                                        
                                     </div>
                                     <div>
                                         <input
-                                        className="opacity-0 cursor-pointer"
+                                        className="opacity-0 h-64 cursor-pointer"
                                          type="file"
                                          accept="image"
                                          onChange={handleFile}

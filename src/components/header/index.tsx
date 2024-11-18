@@ -1,4 +1,4 @@
-import {FaSearch} from "react-icons/fa";
+
 import {FiUser} from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -26,16 +26,7 @@ export function Header(){
                     <Link to='/'>
                         <h1 className="text-white text-xl bg-red-500 p-2 rounded-lg">Book Collection</h1>
                     </Link>
-                    <div
-                    className="hidden flex-1 md:flex items-center gap-2 rounded-lg bg-slate-300 px-2"
-                    >
-                        <FaSearch size={24} color="#000"/>
-                        <input
-                        className="w-full h-10 py-4 px-2 text-zinc-600 bg-transparent outline-none"
-                        type="text"
-                        placeholder="Find your favorite book"
-                        />
-                    </div>
+                  
                     <nav className="flex items-center gap-5">
                 
                     {

@@ -41,9 +41,7 @@ export function UserMenu({menuIsOpen,closeMenu}: MenuProps){
                     <li><Link 
                     onClick={closeMenu}
                     to='/newbook'>New Book</Link></li>
-                    <li><Link 
-                    onClick={closeMenu}
-                    to="/favorites">Favorites</Link></li>
+                   
                     <li><button
                     onClick={handleLogOut}
                     >Logout</button></li>
